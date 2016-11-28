@@ -1,0 +1,314 @@
+html,body{
+    padding:0;
+    margin:0;
+}
+
+#sidebar{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    float: left;
+    border-right: solid 2px white;
+    background-color: #1278CC;
+    color: white;
+    font-family: Helvetica;
+}
+
+#pic{
+    position: absolute;
+    left: 20.1%;
+    width: 79.9%;
+    height:100%;
+    float: right;
+    background: url('https://i.redd.it/feqzc9sjbbdx.jpg');
+    background-position: 0px 0px;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
+#logo{
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 25%;
+    height: 400px;
+    width: 600px;
+}
+
+#main{
+    position: absolute;
+    left: 20.1%;
+    width: 79.9%;
+    float: right;
+    background:white;
+    font-family: Helvetica;
+    color: #1278CC;
+}
+
+.textarea{
+    background: none;
+    color: white;
+    border-width: 0px 0px 1px 0px;
+    border-style: none none solid none;
+    box-shadow: none;
+    position: absolute;
+    left: 80px;
+}
+
+#login{
+    position: relative;
+    left: 20px;
+    top: 300px;
+}
+
+#loginbutton{
+    left: 200px;
+    top: 10px;
+    position: relative;
+}
+
+#warning{
+    position: relative;
+    top:12px;
+}
+
+#account{
+    position: relative;
+    left: 20px;
+    top:50px;
+}
+#controls{
+    position: relative;
+    left: 20px;
+    top:100px;
+}
+
+#controls>div{
+    font-size: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid white;
+    height:25px;
+}
+
+#controls>div:hover{
+    background: #0D5A99;
+}
+
+#controls .selected{
+    background: #0D5A99;
+}
+
+.counter{
+    position:relative;
+    top: -23px;
+    font-size:16px;
+    font-weight:bold;
+    left: 200px;
+    background:white;
+    color:#1278CC;
+    border-radius:50%;
+    height:20px;
+    width:20px;
+    text-align: center;
+    vertical-align: middle;
+    padding:0px;
+    margin:0px;
+}
+
+.button{
+    background-color: white;
+    color: #1278CC;
+    border: 0;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+#compose{
+    height: 60px;
+    background: #1278CC;
+    color: white;
+}
+
+#compose .button{
+    position: absolute;    
+    top:20%;
+    left:1%;
+    display:block;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    line-height: 1px;
+    border-radius: 50%;
+}
+
+#compose label{
+    position: absolute;
+    left:50px;
+    top:18px;
+}
+
+#details{
+    position: absolute;
+    left: 40%;
+    top:80px;
+    color: #6A7882;
+}
+
+#details .button{
+    position:relative;
+    background: #1278CC;
+    color: white;
+    left: 200px;
+    height: 30px;
+    top: 20px;
+}
+
+#details .textarea{
+    color: #6A7882;
+    border-color: #6A7882;
+}
+
+#list{
+    position: fixed;
+    padding-left: 10px;
+    width: 30%;
+    height: 100%;
+    background:white;
+    color: #6A7882;
+    border-right: #1278CC 2px solid;
+    overflow-y: auto;
+}
+
+#list .selected{
+    background: #E8E8E8;
+}
+
+#nomessages{
+    position:relative;
+    top: 20px;
+    left: 140px;
+}
+
+.message{
+    padding-top:15px;
+    padding-bottom:15px;
+    border-bottom: .5px #1278CC solid;
+    margin-right: 10px;
+    font-weight:bold;
+}
+
+.index{
+    visibility: hidden;
+}
+
+.sender{ 
+    color:#1278CC;
+    font-size:20px;   
+}
+
+.date{
+    position:relative;
+    font-size: 12px;
+    float: right;
+    left:-90px;
+    top: 5px;
+}
+
+.bodysegment{
+    font-size:12px;
+    font-weight:normal;
+}
+
+.read>span{
+    color:#6A7882;
+    font-weight:normal;
+}
+
+#userlist{
+    position:relative;
+    top: 20px;
+    left: 20px;
+}
+
+.user{
+    font-size: 20px;
+    font-weight: bold;
+    color: #1278CC;
+    margin-bottom: 10px;
+    border-bottom: solid 1px;
+}
+
+.user .username{
+    position: relative;
+    font-size: 16px;
+    font-weight: normal;
+    left: 30px;
+    color:#6A7882;
+}
+
+#subject{
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
+#readmessages{
+    overflow-y: auto;
+}
+
+#container{
+    border-top: solid 1px;
+}
+
+#sender, #uname, #datesent{
+    position: relative;
+    top: 20px;
+    font-size: 14px;
+}
+
+#sender{
+    font-weight: bold;
+}
+
+#uname{
+    left: 20px;
+}
+
+#datesent{
+    float: right;
+    left: 200px;
+}
+
+#body{
+    border-top: dotted 1px;
+    position: relative;
+    padding-top: 10px;
+    top: 30px;
+    padding-right:50px;
+}
+
+#newmessage .textarea{
+    width: 500px;
+}
+
+#tip{
+    position: relative;
+    font-size:12px;
+    left: 80px;
+}
+
+#newbody{
+    position: relative;
+    top: 50px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+#newmessage .button{
+    position: relative;
+    float: left;
+    color: white;
+    left: 0px;
+    top: 50px;
+}
