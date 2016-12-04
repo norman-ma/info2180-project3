@@ -46,11 +46,16 @@ html,body{
     color: #1278CC;
 }
 
+input:focus, textarea:focus{
+    outline: none;
+}
+
 .textarea{
     background: none;
     color: white;
     border-width: 0px 0px 1px 0px;
     border-style: none none solid none;
+    width: 50%;
     box-shadow: none;
     position: absolute;
     left: 80px;
@@ -62,15 +67,26 @@ html,body{
     top: 300px;
 }
 
+
 #loginbutton{
-    left: 200px;
+    left: 65%;
     top: 10px;
     position: relative;
 }
 
-#warning{
+.error{
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#login .error{
     position: relative;
-    top:12px;
+    top: -3px;
+}
+
+#adduser .error{
+    color: #1278CC;
+    font-size: 12px;
 }
 
 #account{
@@ -198,6 +214,10 @@ html,body{
     font-weight:bold;
 }
 
+.message:hover{
+    background: #E8E8E8;
+}
+
 .index{
     visibility: hidden;
 }
@@ -211,7 +231,7 @@ html,body{
     position:relative;
     font-size: 12px;
     float: right;
-    left:-90px;
+    left:-5%;
     top: 5px;
 }
 
@@ -277,7 +297,7 @@ html,body{
 
 #datesent{
     float: right;
-    left: 200px;
+    left: -5%;
 }
 
 #body{

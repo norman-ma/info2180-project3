@@ -54,7 +54,7 @@
                         Password <input type='password' class='textarea' name='password' id='password'>
                         <br>
                         <input type='submit' class='button' id='loginbutton' value='Login'>
-                        <div id='warning'></div>
+                        <div class='error'></div>
                     </div>
                 </div>
                 <div name='pic' id='pic'>

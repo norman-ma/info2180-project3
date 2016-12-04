@@ -32,7 +32,7 @@
                     echo "Error: Please ensure username is unique";
                 }
             } else{
-                echo "Error: Password must contain atleast 1 capital letter, 1 commmon letter and 1 digit";
+                echo "Error: Password must contain atleast 1 capital letter, 1 commmon letter and 1 digit and must be more than 8 characters long.";
             }
             break;
         case 'users':

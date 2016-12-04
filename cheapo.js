@@ -30,28 +30,29 @@ function login(){
         $.post('login.php',{username:u, password:p}, function(result){
             try{            
                 user = JSON.parse(result);
-                console.log(user);
                 if(user['id'].indexOf("admin") !== -1){
                     $.post('pages.php',{request:'admin'},function(result){
                         $('body').html(result);
-                        console.log(result);
                         setup2(true);
                     },'html');
                 }
                 else{
                      $.post('pages.php',{request:'user'},function(result){
                         $('body').html(result);
-                        console.log(result);
                         setup2(true);
                     },'html');
                 }
             }catch(e){
                 error+= 'Username/Password is invalid';
-                $('#warning').html(error);
+                $('.error').each(function(){
+                    $(this).html(error)
+                });
             }
         });
     }
-    $('.error').html(error);
+    $('.error').each(function(){
+        $(this).html(error)
+    });
 }
 
 
@@ -67,7 +68,6 @@ function setup2(a){
     $('#newuser').click(function(){
         $.post('pages.php',{request:'adduser'},function(result){
             $('#details').html(result);
-            console.log(result);
             setTimeout(function(){
                 $('#addnewuser').click(newUser);
                 $('.textarea').each(function(){
@@ -103,7 +103,6 @@ function setup2(a){
     $('#composebutton').click(function(){
         $.post('pages.php',{request:'compose'},function(result){
             $('#details').html(result);
-            console.log(result);
             setTimeout(function(){
                 $('#sendbutton').click(sendMessage);
             },1000);
@@ -125,7 +124,6 @@ function select(el){
 function users(){
     $.post('users.php',{request:'users'},function(result){
        $('#list').html(result);
-       console.log(result);
     });
 }
 
@@ -143,7 +141,6 @@ function newUser(){
     
     $.post('users.php',{request:'newuser',firstname:fname,lastname:lname,username:uname,password:pword,admin:a},function(result){
         $('.error').html(result);
-        console.log(result);
     });
     
     $('#firstname').val('');
@@ -156,7 +153,6 @@ function newUser(){
 function logout(){
     $.post('pages.php',{request:'home'},function(result){
         $('body').html(result);
-        console.log(result);
     },'html').done(setup);
     user = '';
     inbox = ''; 
@@ -175,7 +171,6 @@ function getMessages(){
     
     $.post('messages.php',{id:user['id'], request:'readlist'}, function(result){
         read=JSON.parse(result);
-        console.log(read);
     });
     
     setTimeout(function(){
@@ -229,13 +224,10 @@ function setupMessages(a){
     $('.message').each(function(){
         $(this).click(function(){
             var indx = parseInt($('span.index',this).html());
-            console.log(indx);
             displayMessage(a,indx);
             if(!$(this).hasClass('read')){
                 $(this).addClass('read');
-                $.post('messages.php',{id:user['id'],request:'read',m_id:a[indx]['id']},function(result){
-                    console.log(result);
-                });
+                $.post('messages.php',{id:user['id'],request:'read',m_id:a[indx]['id']});
             }
             select($(this));
             setTimeout(getMessages, 500);
@@ -247,7 +239,6 @@ function setupMessages(a){
 function displayMessage(a,i){
     $.post('pages.php',{request:'readmessage'},function(result){
         $('#details').html(result);
-        console.log(result);
     },'html');
     setTimeout(function(){
         var sender=a[i]['lastname']+', '+a[i]['firstname'];
@@ -269,7 +260,6 @@ function sendMessage(){
     var subject = $('#subj').val();
     var body = $('#newbody').val();
     $.post('messages.php',{id:user['id'],request:'send',to:JSON.stringify(recipients),subj:subject,body:body},function(result){
-        console.log(result);
         $('#recipients').val('');
         $('#subj').val('');
         $('#newbody').val('');
